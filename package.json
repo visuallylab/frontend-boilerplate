@@ -9,8 +9,15 @@
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
+    "apollo-boost": "^0.1.16",
+    "fsevents": "^2.0.1",
+    "graphql": "^14.0.2",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "7.0.2",
+    "node-gyp": "^3.8.0",
+    "node-pre-gyp": "^0.12.0",
     "react": "16.6.3",
+    "react-apollo": "^2.1.11",
     "react-dom": "16.6.3"
   },
   "devDependencies": {
@@ -18,6 +25,10 @@
     "@types/react": "^16.4.16",
     "@types/react-dom": "16.0.8",
     "typescript": "3.1.1"
+  },
+  "resolutions": {
+    "fsevents": "^2.0.1",
+    "next/**/fsevents": "1.2.4"
   },
   "license": "ISC"
 }
