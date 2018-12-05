@@ -1,14 +1,10 @@
 module.exports = {
-    posts: [
-        { id: 1, title: "Lorem Ipsum", views: 254, user_id: 123 },
-        { id: 2, title: "Sic Dolor amet", views: 65, user_id: 456 },
-    ],
     users: [
-        { id: 123, name: "John Doe" },
-        { id: 456, name: "Jane Doe" }
+        { id: 123, name: "John" },
+        { id: 456, name: "Tony" }
     ],
     comments: [
-        { id: 987, post_id: 1, body: "Consectetur adipiscing elit", date: new Date('2017-07-03') },
-        { id: 995, post_id: 1, body: "Nam molestie pellentesque dui", date: new Date('2017-08-17') }
+        { id: 987, user_id: 123, body: "Hello how are you", date: new Date('2017-07-03') },
+        { id: 995, user_id: 456, body: "Nice to meet you", date: new Date('2017-08-17') }
     ]
 }

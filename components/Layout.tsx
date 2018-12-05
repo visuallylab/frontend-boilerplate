@@ -16,12 +16,13 @@ const Layout: React.SFC<Props> = ({ children, title = 'This is the default title
     <header>
       <nav>
         <Link href='/'><a>Home</a></Link> |{' '}
-        <Link href='/about'><a>About</a></Link>
+        <Link href='/about'><a>About</a></Link>|{' '}
+        <Link href='/todo'><a>ToDo</a></Link>
       </nav>
     </header>
     {children}
     <footer>
-      I'm here to stay
+      Footer is here to stay
     </footer>
   </div>
 )
