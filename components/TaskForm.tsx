@@ -13,12 +13,15 @@ const ADD_TODO = gql`
 const TodoForm = () => (
   <Mutation mutation={ADD_TODO}>
     {addTodo => {
-      let input;
+      let input: HTMLInputElement | null;
       return (
         <div>
           <form
             onSubmit={e => {
               e.preventDefault();
+              if (!input) {
+                return;
+              }
               if (!input.value.trim()) {
                 return;
               }
@@ -31,7 +34,7 @@ const TodoForm = () => (
                 input = node;
               }}
             />
-            <button type="submit">Add Todo</button>
+            <button type='submit'>Add Todo</button>
           </form>
         </div>
       );

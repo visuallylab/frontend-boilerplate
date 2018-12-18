@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import Todo from './Todo';
+import Task from './Task';
 
 const GET_TODOS = gql`
   {
@@ -15,7 +15,7 @@ const GET_TODOS = gql`
   }
 `;
 
-const getVisibleTodos = (todos, filter) => {
+const getVisibleTodos = (todos: todo[], filter: TaskFilter) => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos;
@@ -31,14 +31,11 @@ const getVisibleTodos = (todos, filter) => {
 const TodoList = () => (
   <Query query={GET_TODOS}>
     {({ data: { todos, visibilityFilter } }) => (
-        <div>
-          <h2>Todos from local state</h2>
-          <ul>
-            {getVisibleTodos(todos, visibilityFilter).map(todo => (
-              <Todo key={todo.id} {...todo} />
-            ))}
-          </ul>
-        </div>
+        <ul>
+          {getVisibleTodos(todos, visibilityFilter).map(todo => (
+            <Task key={todo.id} {...todo} />
+          ))}
+        </ul>
       )
     }
   </Query>

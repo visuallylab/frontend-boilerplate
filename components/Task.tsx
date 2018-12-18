@@ -8,11 +8,17 @@ const TOGGLE_TODO = gql`
   }
 `;
 
-const Todo = ({ id, completed, text }) => (
+type Props = {
+  id: string;
+  completed: boolean;
+  text: string;
+};
+
+const Task: React.FunctionComponent<Props> = ({ id, completed, text }) => (
   <Mutation mutation={TOGGLE_TODO} variables={{ id }}>
     {toggleTodo => (
       <li
-        onClick={toggleTodo}
+        onClick={() => toggleTodo()}
         style={{
           textDecoration: completed ? 'line-through' : 'none',
         }}
@@ -23,4 +29,4 @@ const Todo = ({ id, completed, text }) => (
   </Mutation>
 );
 
-export default Todo;
+export default Task;

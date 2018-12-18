@@ -10,7 +10,12 @@ const GET_VISIBILITY_FILTER = gql`
   }
 `;
 
-const FilterLink = ({ filter, children }) => (
+type Props = {
+  filter: TaskFilter;
+  children: React.ReactNode;
+};
+
+const FilterLink: React.FunctionComponent<Props> = ({ filter, children }) => (
   <Query query={GET_VISIBILITY_FILTER}>
     {({ data, client }) => (
       <Link
@@ -23,14 +28,14 @@ const FilterLink = ({ filter, children }) => (
   </Query>
 );
 
-const Footer = () => (
+const TaskFilter = () => (
   <p>
-    Show: <FilterLink filter="SHOW_ALL">All</FilterLink>
+    Show: <FilterLink filter='SHOW_ALL'>All</FilterLink>
     {', '}
-    <FilterLink filter="SHOW_ACTIVE">Active</FilterLink>
+    <FilterLink filter='SHOW_ACTIVE'>Active</FilterLink>
     {', '}
-    <FilterLink filter="SHOW_COMPLETED">Completed</FilterLink>
+    <FilterLink filter='SHOW_COMPLETED'>Completed</FilterLink>
   </p>
 );
 
-export default Footer;
+export default TaskFilter;
