@@ -5,17 +5,10 @@ based on next.js example of with Typescript
 ## Containes
 1. next.js
 2. styled-jsx
-- [ ] Typescript
-- [ ] tslint
-- [ ] apollo
-- [ ] apollo-link-state (todo list)
-- [ ] page
-- [ ] babel-config
-- [ ] tsconfig
-- [ ] next.js config
-- [ ] browser support
-- [ ] ant design
-- [ ] auth
+3. Typescript
+4. tslint
+5. apollo
+6. apollo-link-state
 
 ## Getting start:
 1. install
