@@ -18,8 +18,15 @@ export const GET_USERS = gql`
 const CommentList = () => (
   <Query query={GET_USERS}>
     {({ loading, error, data}) => {
-      if (error) return <p>Error loading posts.</p>;
-      if (loading) return <p>Loading</p>;
+
+      if (error) {
+        return <p>Error loading posts.</p>;
+      }
+
+      if (loading) {
+        return <p>Loading</p>;
+      }
+
       const { allUsers } = data as { allUsers: AllUsers};
 
       return (
