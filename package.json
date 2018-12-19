@@ -1,36 +1,28 @@
 {
-  "name": "with-typescript",
-  "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "server": "json-graphql-server fake-db.js --p 5000",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "deploy": "next build && next export && cp CNAME ./out/ && gh-pages -d out",
+    "export": "next build && next export",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
-    "apollo-boost": "^0.1.16",
-    "fsevents": "^2.0.1",
-    "graphql": "^14.0.2",
-    "isomorphic-unfetch": "^3.0.0",
     "next": "7.0.2",
-    "node-gyp": "^3.8.0",
-    "node-pre-gyp": "^0.12.0",
     "react": "16.6.3",
-    "react-apollo": "^2.1.11",
-    "react-dom": "16.6.3"
+    "react-dom": "16.6.3",
+    "react-icons": "^3.2.2"
   },
   "devDependencies": {
-    "@types/next": "^7.0.1",
-    "@types/react": "^16.4.16",
+    "@types/next": "^7.0.5",
+    "@types/react": "^16.7.17",
     "@types/react-dom": "16.0.8",
-    "json-graphql-server": "^2.1.3",
+    "@types/styled-jsx": "^2.2.7",
+    "gh-pages": "^2.0.1",
+    "tslint": "^5.11.0",
     "typescript": "3.1.1"
-  },
-  "resolutions": {
-    "fsevents": "^2.0.1",
-    "next/**/fsevents": "1.2.4"
   },
   "license": "ISC"
 }
