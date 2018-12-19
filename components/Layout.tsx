@@ -15,7 +15,7 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
     </Head>
     <header>
       <nav>
-        <Link href='/'><a>Home</a></Link>
+        <Link href='/'><a>logo</a></Link>
       </nav>
     </header>
     {children}
