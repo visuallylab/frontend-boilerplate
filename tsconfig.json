@@ -4,6 +4,11 @@
     "module": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "baseUrl": ".",
+    "strict": true,
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
@@ -11,8 +16,12 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": false,
+    "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "outDir": "build",
   }
 }
