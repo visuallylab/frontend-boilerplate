@@ -9,6 +9,7 @@ based on next.js example of with Typescript
 4. tslint
 5. ant design
 6. dotenv
+7. basic meta tag setup
 
 ## Getting start:
 1. copy `.env-template` to `.env` and fill in necessary values.
@@ -20,6 +21,12 @@ yarn
 ```bash
 yarn dev
 ```
+
+## Setup meta tag
+1. Modify constants in `constants/index.ts`
+2. Replace `favicon.ico` and `large-icon.png`
+    - recommended size of `favicon.ico` is 32x32px, `large-icon.png` is over 200px of width.
+    - use [favicon generator](https://www.favicon-generator.org/)
 
 ## Browser support
 
