@@ -1,9 +1,10 @@
-import Link from 'next/link'
 import Layout from '../components/Layout';
+import Section from '../components/Section';
 
 export default () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <p>This is the about page</p>
-    <p><Link href='/'><a>Go home</a></Link></p>
+  <Layout>
+    <Section fullscreen>
+      <h1>About page</h1>
+    </Section>
   </Layout>
-)
+);

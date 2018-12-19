@@ -1,19 +1,23 @@
 # frontend-boilerplate
 
-based on next.js example of with ts
+based on next.js example of with Typescript
 
 ## Containes
-next.js
-styled-jsx
-ts
-apollo
+1. next.js
+2. styled-jsx
+3. Typescript
+4. tslint
+5. ant design
+6. dotenv
 
-## Install it and run:
+## Getting start:
+1. copy `.env-template` to `.env` and fill in necessary values.
+2. install
 ```bash
-npm install
-npm run dev
-# or
 yarn
+```
+3. run client
+```bash
 yarn dev
 ```
 
@@ -22,10 +26,9 @@ yarn dev
 Next.js supports IE11 and all modern browsers out of the box using @babel/preset-env.
 
 The next/babel preset includes everything needed to transpile React applications. This includes:
-
-preset-env
-preset-react
-plugin-proposal-class-properties
-plugin-proposal-object-rest-spread
-plugin-transform-runtime
-styled-jsx
+1. preset-env
+2. preset-react
+3. plugin-proposal-class-properties
+4. plugin-proposal-object-rest-spread
+5. plugin-transform-runtime
+6. styled-jsx
