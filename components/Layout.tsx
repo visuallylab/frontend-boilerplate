@@ -4,14 +4,14 @@ import Link from 'next/link';
 import css from 'styled-jsx/css';
 import { Col, Layout, Row } from 'antd';
 
-import '../asserts/style.less';
+import '../assets/style.less';
 import {
   SITE_TITLE,
   SITE_DESC,
   NAV_TITLE,
   FAVICON_PATH,
   LARGE_ICON_PATH,
-  SITE_URL,
+  SITE_URL
 } from '../constants';
 
 interface IProps {
@@ -21,50 +21,56 @@ interface IProps {
 
 const MyLayout: React.FunctionComponent<IProps> = ({
   children,
-  title = SITE_TITLE,
+  title = SITE_TITLE
 }) => (
-    <Layout>
-      <Head>
-        <title>{title}</title>
-        <meta charSet='utf-8' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta name='language' content='en' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta name='description' content={SITE_DESC} />
-        <link rel='icon' type='image/x-icon' href={FAVICON_PATH} />
-        <link rel='apple-touch-icon' href={LARGE_ICON_PATH} />
-        <meta property='og:url' content={SITE_URL} />
-        <meta property='og:title' content={SITE_TITLE} />
-        <meta property='og:description' content={SITE_DESC} />
-        <meta property='og:image' content={LARGE_ICON_PATH} />
-        <meta name='apple-mobile-web-app-capable' content='yes' />
-        <meta name='apple-mobile-web-app-status-bar-style' content='black' />
-      </Head>
-      <Layout.Header className={`${className} nav-fixed`}>
-        <span>
-          <img src='/static/logo.svg' alt='logo' className={`${className} nav-logo`} />
-          <span className={`${className} nav-title`}>
-            {NAV_TITLE}
-          </span>
-        </span>
-        <span>
-          <Link href='/'><a>Home</a></Link>
-          {' | '}
-          <Link href='/about'><a>About</a></Link>
-        </span>
-      </Layout.Header>
-      <Layout.Content>
-        <Row type='flex' justify='center'>
-          <Col xs={20} lg={12}>
-            {children}
-          </Col>
-        </Row>
-      </Layout.Content>
-      <Layout.Footer> Footer is here </Layout.Footer>
-      {globalStyle}
-      {styles}
-    </Layout>
-  );
+  <Layout>
+    <Head>
+      <title>{title}</title>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="language" content="en" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content={SITE_DESC} />
+      <link rel="icon" type="image/x-icon" href={FAVICON_PATH} />
+      <link rel="apple-touch-icon" href={LARGE_ICON_PATH} />
+      <meta property="og:url" content={SITE_URL} />
+      <meta property="og:title" content={SITE_TITLE} />
+      <meta property="og:description" content={SITE_DESC} />
+      <meta property="og:image" content={LARGE_ICON_PATH} />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    </Head>
+    <Layout.Header className={`${className} nav-fixed`}>
+      <span>
+        <img
+          src="/static/logo.svg"
+          alt="logo"
+          className={`${className} nav-logo`}
+        />
+        <span className={`${className} nav-title`}>{NAV_TITLE}</span>
+      </span>
+      <span>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        {' | '}
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </span>
+    </Layout.Header>
+    <Layout.Content>
+      <Row type="flex" justify="center">
+        <Col xs={20} lg={12}>
+          {children}
+        </Col>
+      </Row>
+    </Layout.Content>
+    <Layout.Footer> Footer is here </Layout.Footer>
+    {globalStyle}
+    {styles}
+  </Layout>
+);
 
 const { styles, className } = css.resolve`
   .nav-fixed {
