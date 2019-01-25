@@ -3,7 +3,7 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
 export default () => (
-  <Layout title='Comments | Next.js + TypeScript Example'>
+  <Layout title="Comments | Next.js + TypeScript Example">
     <h1>Comments with server 😼</h1>
     <CommentList />
     <CommentForm />

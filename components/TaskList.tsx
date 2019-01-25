@@ -6,7 +6,7 @@ import Task from './Task';
 
 const GET_TODOS = gql`
   {
-    todos @client{
+    todos @client {
       id
       completed
       text
@@ -31,13 +31,12 @@ const getVisibleTodos = (todos: todo[], filter: TaskFilter) => {
 const TodoList = () => (
   <Query query={GET_TODOS}>
     {({ data: { todos, visibilityFilter } }) => (
-        <ul>
-          {getVisibleTodos(todos, visibilityFilter).map(todo => (
-            <Task key={todo.id} {...todo} />
-          ))}
-        </ul>
-      )
-    }
+      <ul>
+        {getVisibleTodos(todos, visibilityFilter).map(todo => (
+          <Task key={todo.id} {...todo} />
+        ))}
+      </ul>
+    )}
   </Query>
 );
 

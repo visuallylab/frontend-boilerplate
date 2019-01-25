@@ -1,6 +1,6 @@
-declare module NodeJS {
+declare namespace NodeJS {
   interface Global {
-    fetch: any
+    fetch: any;
   }
 }
 
@@ -10,9 +10,9 @@ type createCommentResult = {
       id: string;
       user_id: string;
       body: string;
-    }
-  }
-}
+    };
+  };
+};
 
 type AllUsers = Array<{
   id: string;
@@ -21,17 +21,17 @@ type AllUsers = Array<{
     id: string;
     body: string;
   }>;
-}>
+}>;
 
 type todo = {
   id: string;
   completed: boolean;
   text: string;
-}
+};
 
 type apolloState = {
   visibilityFilter: TaskFilter;
   todos: todo[];
-}
+};
 
 type TaskFilter = 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';

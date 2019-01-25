@@ -17,8 +17,7 @@ export const GET_USERS = gql`
 
 const CommentList = () => (
   <Query query={GET_USERS}>
-    {({ loading, error, data}) => {
-
+    {({ loading, error, data }) => {
       if (error) {
         return <p>Error loading posts.</p>;
       }
@@ -27,20 +26,21 @@ const CommentList = () => (
         return <p>Loading</p>;
       }
 
-      const { allUsers } = data as { allUsers: AllUsers};
+      const { allUsers } = data as { allUsers: AllUsers };
 
       return (
         <ul>
-          {
-            allUsers.map(user => (
+          {allUsers.map(user => (
             <li key={user.id}>
-            {user.name}: {user.Comments.map(comment => comment.body).reduce((a, b) => `${a}, ${b}`)}
+              {user.name}:{' '}
+              {user.Comments.map(comment => comment.body).reduce(
+                (a, b) => `${a}, ${b}`
+              )}
             </li>
           ))}
         </ul>
       );
-    }
-    }
+    }}
   </Query>
 );
 

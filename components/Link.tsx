@@ -6,14 +6,18 @@ type Props = {
   onClick: () => void;
 };
 
-const Link: React.FunctionComponent<Props> = ({ active, children, onClick }) => {
+const Link: React.FunctionComponent<Props> = ({
+  active,
+  children,
+  onClick
+}) => {
   if (active) {
     return <span>{children}</span>;
   }
 
   return (
     <a
-      href='#'
+      href="#"
       onClick={e => {
         e.preventDefault();
         onClick();

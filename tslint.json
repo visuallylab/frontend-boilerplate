@@ -1,22 +1,3 @@
 {
-    "extends": "tslint:latest",
-    "jsRules": {},
-    "rules": {
-      "curly": true,
-      "semicolon": true,
-      "class-name": true,
-      "ordered-imports": false, // 習慣上希望有
-      "object-literal-sort-keys": false, // 習慣上希望有
-      "max-classes-per-file": false, // 習慣上一隻檔案一個
-      "quotemark": [true, "single"],
-      "object-literal-key-quotes": [true, "as-needed"],
-      "arrow-parens": [true, "ban-single-arg-parens"],
-      "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
-      "no-namespace": [true, "allow-declarations"],
-      "interface-over-type-literal": false, // for use type
-      "no-implicit-dependencies": false, // for use alias
-      "no-submodule-imports": false, // for use alias
-      "no-angle-bracket-type-assertion": false
-    },
-    "rulesDirectory": []
-  }
+  "extends": "@visuallylab/tslint-config-frontend"
+}

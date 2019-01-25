@@ -12,8 +12,8 @@ const CommentForm = () => {
       {client => {
         return (
           <form onSubmit={event => handleSubmit(event, client)}>
-            <input placeholder='comment...' name='comment' required />
-            <button type='submit'>send from john</button>
+            <input placeholder="comment..." name="comment" required={true} />
+            <button type="submit">send from john</button>
           </form>
         );
       }}
@@ -22,15 +22,19 @@ const CommentForm = () => {
 };
 
 const update: MutationUpdaterFn = (proxy, mutationResult) => {
-  const { data: { createComment }} = mutationResult as createCommentResult;
-  const data = proxy.readQuery({query: GET_USERS}) as { allUsers: AllUsers };
+  const {
+    data: { createComment }
+  } = mutationResult as createCommentResult;
+  const data = proxy.readQuery({ query: GET_USERS }) as { allUsers: AllUsers };
 
-  const targetUser = data.allUsers.find(user => user.id === createComment.user_id);
+  const targetUser = data.allUsers.find(
+    user => user.id === createComment.user_id
+  );
   targetUser!.Comments = targetUser!.Comments.concat([createComment]);
 
   proxy.writeQuery({
     query: GET_USERS,
-    data,
+    data
   });
 };
 
@@ -48,20 +52,15 @@ const handleSubmit = (event: React.SyntheticEvent, client: ApolloClient) => {
   client.mutate({
     mutation: gql`
       mutation createComment($date: Date!, $comment: String!, $id: ID!) {
-        createComment(
-          id: $id
-          user_id: 123
-          body: $comment
-          date: $date
-          ){
-            id
-            user_id
-            body
-          }
+        createComment(id: $id, user_id: 123, body: $comment, date: $date) {
+          id
+          user_id
+          body
+        }
       }
     `,
     variables: { comment, date, id },
-    update,
+    update
   });
 };
 

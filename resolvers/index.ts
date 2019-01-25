@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const defaults = {
   todos: [],
-  visibilityFilter: 'SHOW_ALL',
+  visibilityFilter: 'SHOW_ALL'
 };
 
 let nextTodoId = 3;
@@ -24,10 +24,10 @@ export const resolvers = {
         id: nextTodoId++,
         text,
         completed: false,
-        __typename: 'TodoItem',
+        __typename: 'TodoItem'
       };
       const data = {
-        todos: previous.todos.concat([newTodo]),
+        todos: previous.todos.concat([newTodo])
       };
       cache.writeData({ data });
       return newTodo;
@@ -43,6 +43,6 @@ export const resolvers = {
       const data = { ...todo, completed: !todo.completed };
       cache.writeData({ id, data });
       return null;
-    },
-  },
+    }
+  }
 };
