@@ -15,12 +15,12 @@ const Section: React.FunctionComponent<IProps> = ({
   textAlign = 'left',
   fullscreen = false,
   first = false,
-  alignItems = 'center',
+  alignItems = 'center'
 }) => (
   <section className={`py align w-100 ${fullscreen ? 'h-100' : ''}`}>
     <h1>{title}</h1>
     {children}
-    <style jsx>{`
+    <style jsx={true}>{`
       .h-100 {
         height: 100vh;
         box-sizing: border-box;

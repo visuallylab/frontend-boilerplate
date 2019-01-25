@@ -24,8 +24,8 @@ class Index extends React.Component {
       name: '',
       region: '',
       surname: '',
-      photo: '',
-    },
+      photo: ''
+    }
   };
 
   public async componentDidMount() {
@@ -41,12 +41,16 @@ class Index extends React.Component {
     const { gender, name, region, surname, photo } = this.state.user;
     return (
       <Layout>
-        <Section fullscreen>
+        <Section fullscreen={true}>
           <Card
-            hoverable
+            hoverable={true}
             style={{ width: 200 }}
-            cover={<img alt='avatar' src={photo} />}
-            actions={[<Icon type='like' />, <Icon type='heart' />, <Icon type='instagram' />]}
+            cover={<img alt="avatar" src={photo} />}
+            actions={[
+              <Icon key={1} type="like" />,
+              <Icon key={2} type="heart" />,
+              <Icon key={3} type="instagram" />
+            ]}
           >
             <Card.Meta
               title={`${name} ${surname}`}

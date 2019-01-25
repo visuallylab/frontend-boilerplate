@@ -101,7 +101,7 @@ const { styles, className } = css.resolve`
 `;
 
 const globalStyle = (
-  <style jsx global>{`
+  <style jsx={true} global={true}>{`
     h1 {
       font-weight: 400 !important;
       font-size: 2.5rem;
