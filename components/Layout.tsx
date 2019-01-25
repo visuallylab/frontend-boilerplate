@@ -6,22 +6,25 @@ type Props = {
   title?: string;
 };
 
-const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the default title' }) => (
+const Layout: React.FunctionComponent<Props> = ({
+  children,
+  title = 'This is the default title'
+}) => (
   <div>
     <Head>
       <title>{title}</title>
-      <meta charSet='utf-8' />
-      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
       <nav>
-        <Link href='/'><a>logo</a></Link>
+        <Link href="/">
+          <a>logo</a>
+        </Link>
       </nav>
     </header>
     {children}
-    <footer>
-      Footer is here to stay
-    </footer>
+    <footer>Footer is here to stay</footer>
   </div>
 );
 

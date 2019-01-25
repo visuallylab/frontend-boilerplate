@@ -8,10 +8,8 @@ const Section: React.FunctionComponent<Props> = ({ title, children }) => {
   return (
     <section>
       <h1>{title}</h1>
-      <div>
-        {children}
-      </div>
-      <style jsx>{`
+      <div>{children}</div>
+      <style jsx={true}>{`
         section {
           height: 60vh;
         }
