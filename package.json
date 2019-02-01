@@ -52,7 +52,8 @@
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": false
+    "jsxSingleQuote": false,
+    "trailingComma": "all"
   },
   "license": "ISC"
 }

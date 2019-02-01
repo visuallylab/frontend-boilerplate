@@ -24,8 +24,8 @@ class Index extends React.Component {
       name: '',
       region: '',
       surname: '',
-      photo: ''
-    }
+      photo: '',
+    },
   };
 
   public async componentDidMount() {
@@ -49,7 +49,7 @@ class Index extends React.Component {
             actions={[
               <Icon key={1} type="like" />,
               <Icon key={2} type="heart" />,
-              <Icon key={3} type="instagram" />
+              <Icon key={3} type="instagram" />,
             ]}
           >
             <Card.Meta

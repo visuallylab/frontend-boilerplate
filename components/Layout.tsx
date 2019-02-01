@@ -11,7 +11,7 @@ import {
   NAV_TITLE,
   FAVICON_PATH,
   LARGE_ICON_PATH,
-  SITE_URL
+  SITE_URL,
 } from '../constants';
 
 interface IProps {
@@ -21,7 +21,7 @@ interface IProps {
 
 const MyLayout: React.FunctionComponent<IProps> = ({
   children,
-  title = SITE_TITLE
+  title = SITE_TITLE,
 }) => (
   <Layout>
     <Head>

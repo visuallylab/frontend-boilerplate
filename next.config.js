@@ -11,7 +11,7 @@ require('dotenv').config();
 
 // Where your antd-custom.less file lives
 const themeVariables = lessToJS(
-  fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
+  fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8'),
 );
 
 // fix: prevents error when .less files are required by node
@@ -27,16 +27,16 @@ module.exports = withBundleAnalyzer(
       bundleAnalyzerConfig: {
         server: {
           analyzerMode: 'static',
-          reportFilename: '../bundles/server.html'
+          reportFilename: '../bundles/server.html',
         },
         browser: {
           analyzerMode: 'static',
-          reportFilename: '../bundles/client.html'
-        }
+          reportFilename: '../bundles/client.html',
+        },
       },
       lessLoaderOptions: {
         javascriptEnabled: true,
-        modifyVars: themeVariables // make your antd custom effective
+        modifyVars: themeVariables, // make your antd custom effective
       },
       webpack: (config, { isServer, buildId, dev }) => {
         config.plugins = config.plugins || [];
@@ -48,12 +48,12 @@ module.exports = withBundleAnalyzer(
           // Read the .env file
           new Dotenv({
             path: path.join(__dirname, '.env'),
-            systemvars: true
-          })
+            systemvars: true,
+          }),
         ];
 
         return config;
-      }
-    })
-  )
+      },
+    }),
+  ),
 );
