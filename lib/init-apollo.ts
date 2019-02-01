@@ -2,7 +2,7 @@ import {
   ApolloClient,
   InMemoryCache,
   HttpLink,
-  ApolloLink
+  ApolloLink,
 } from 'apollo-boost';
 import fetch from 'isomorphic-unfetch';
 
@@ -26,14 +26,14 @@ function create(initialState: any) {
   const stateLink = withClientState({ resolvers, defaults, cache, typeDefs });
   const httpLink = new HttpLink({
     uri: 'http://localhost:5000', // Server URL (must be absolute)
-    credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
+    credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
   });
   return new ApolloClient({
     connectToDevTools: isBrowser,
     // ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     ssrMode: false, // for debug
     cache,
-    link: ApolloLink.from([stateLink, httpLink])
+    link: ApolloLink.from([stateLink, httpLink]),
   });
 }
 

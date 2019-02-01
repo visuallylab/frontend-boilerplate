@@ -34,7 +34,7 @@ const CommentList = () => (
             <li key={user.id}>
               {user.name}:{' '}
               {user.Comments.map(comment => comment.body).reduce(
-                (a, b) => `${a}, ${b}`
+                (a, b) => `${a}, ${b}`,
               )}
             </li>
           ))}

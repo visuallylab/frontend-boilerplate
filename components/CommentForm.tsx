@@ -23,18 +23,18 @@ const CommentForm = () => {
 
 const update: MutationUpdaterFn = (proxy, mutationResult) => {
   const {
-    data: { createComment }
+    data: { createComment },
   } = mutationResult as createCommentResult;
   const data = proxy.readQuery({ query: GET_USERS }) as { allUsers: AllUsers };
 
   const targetUser = data.allUsers.find(
-    user => user.id === createComment.user_id
+    user => user.id === createComment.user_id,
   );
   targetUser!.Comments = targetUser!.Comments.concat([createComment]);
 
   proxy.writeQuery({
     query: GET_USERS,
-    data
+    data,
   });
 };
 
@@ -60,7 +60,7 @@ const handleSubmit = (event: React.SyntheticEvent, client: ApolloClient) => {
       }
     `,
     variables: { comment, date, id },
-    update
+    update,
   });
 };
 

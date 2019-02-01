@@ -20,7 +20,7 @@ const Task: React.FunctionComponent<Props> = ({ id, completed, text }) => (
       <li
         onClick={() => toggleTodo()}
         style={{
-          textDecoration: completed ? 'line-through' : 'none'
+          textDecoration: completed ? 'line-through' : 'none',
         }}
       >
         {text}

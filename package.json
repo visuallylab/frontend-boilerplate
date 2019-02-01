@@ -26,7 +26,7 @@
     "@types/node": "^10.12.15",
     "@types/react": "^16.4.16",
     "@types/react-dom": "16.0.8",
-    "@visuallylab/tslint-config-frontend": "^1.0.11",
+    "@visuallylab/tslint-config-frontend": "^1.0.12",
     "husky": "^1.3.1",
     "json-graphql-server": "^2.1.3",
     "lint-staged": "^8.1.0",
@@ -50,7 +50,8 @@
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": false
+    "jsxSingleQuote": false,
+    "trailingComma": "all"
   },
   "license": "ISC"
 }

@@ -9,7 +9,7 @@ type Props = {
 const Link: React.FunctionComponent<Props> = ({
   active,
   children,
-  onClick
+  onClick,
 }) => {
   if (active) {
     return <span>{children}</span>;

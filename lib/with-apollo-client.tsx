@@ -30,7 +30,7 @@ export default (App: React.ComponentClass<any>) => {
               Component={Component}
               router={router}
               apolloClient={apollo}
-            />
+            />,
           );
         } catch (error) {
           // Prevent Apollo Client GraphQL errors from crashing SSR.
@@ -49,7 +49,7 @@ export default (App: React.ComponentClass<any>) => {
 
       return {
         ...appProps,
-        apolloState
+        apolloState,
       };
     }
     public apolloClient: ApolloClient<any> = initApollo(this.props.apolloState);
