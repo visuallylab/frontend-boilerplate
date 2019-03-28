@@ -4,10 +4,10 @@
     "module": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "strict": true,
     "moduleResolution": "node",
     "allowJs": true,
@@ -22,6 +22,6 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
-    "outDir": "build",
+    "outDir": "build"
   }
 }

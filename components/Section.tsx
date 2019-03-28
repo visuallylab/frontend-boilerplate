@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+interface ISectionProps {
+  textAlign?: 'center' | 'left' | 'right';
+  alignItems?: 'center' | 'flex-start' | 'flex-end';
+  fullscreen?: boolean;
+  first?: boolean;
+}
 
 interface IProps {
   textAlign?: 'center' | 'left' | 'right';
@@ -9,37 +16,35 @@ interface IProps {
   desc?: string[];
 }
 
+const StyledSection = styled.section<ISectionProps>`
+  width: 100%;
+  padding-top: ${props => (props.first ? 'calc(8vh + 64px)' : '8vh')};
+  padding-bottom: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: ${props => props.alignItems};
+  text-align: ${props => props.textAlign};
+  height: ${props => (props.fullscreen ? '100vh' : 'initial')};
+  box-sizing: ${props => (props.fullscreen ? ' border-box' : 'initial')};
+`;
+
 const Section: React.FunctionComponent<IProps> = ({
   children,
   title = '',
-  textAlign = 'left',
   fullscreen = false,
+  textAlign = 'left',
   first = false,
   alignItems = 'center',
 }) => (
-  <section className={`py align w-100 ${fullscreen ? 'h-100' : ''}`}>
+  <StyledSection
+    fullscreen={fullscreen}
+    textAlign={textAlign}
+    first={first}
+    alignItems={alignItems}
+  >
     <h1>{title}</h1>
     {children}
-    <style jsx={true}>{`
-      .h-100 {
-        height: 100vh;
-        box-sizing: border-box;
-      }
-      .w-100 {
-        width: 100%;
-      }
-      .py {
-        padding-top: ${first ? 'calc(8vh + 64px)' : '8vh'};
-        padding-bottom: 8vh;
-      }
-      .align {
-        display: flex;
-        justify-content: center;
-        align-items: ${alignItems};
-        text-align: ${textAlign};
-      }
-    `}</style>
-  </section>
+  </StyledSection>
 );
 
 export default Section;

@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import css from 'styled-jsx/css';
+import styled from 'styled-components';
+
 import { Col, Layout, Row } from 'antd';
 
-import '../assets/style.less';
+import '@/assets/style.less';
 import {
   SITE_TITLE,
   SITE_DESC,
@@ -18,6 +19,31 @@ interface IProps {
   title?: string;
   children: React.ReactNode;
 }
+
+const StyledHeader = styled(Layout.Header)`
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: rgba(240, 242, 245, 0.95);
+  height: auto;
+  padding: 12px 36px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+const StyledImage = styled.img`
+  height: 2.5rem;
+`;
+
+const NavTitle = styled.span`
+  line-height: 2.5rem;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 10px;
+  transform: translateY(5px);
+`;
 
 const MyLayout: React.FunctionComponent<IProps> = ({
   children,
@@ -40,14 +66,10 @@ const MyLayout: React.FunctionComponent<IProps> = ({
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     </Head>
-    <Layout.Header className={`${className} nav-fixed`}>
+    <StyledHeader>
       <span>
-        <img
-          src="/static/logo.svg"
-          alt="logo"
-          className={`${className} nav-logo`}
-        />
-        <span className={`${className} nav-title`}>{NAV_TITLE}</span>
+        <StyledImage src="/static/logo.svg" alt="logo" />
+        <NavTitle>{NAV_TITLE}</NavTitle>
       </span>
       <span>
         <Link href="/">
@@ -58,7 +80,7 @@ const MyLayout: React.FunctionComponent<IProps> = ({
           <a>About</a>
         </Link>
       </span>
-    </Layout.Header>
+    </StyledHeader>
     <Layout.Content>
       <Row type="flex" justify="center">
         <Col xs={20} lg={12}>
@@ -67,61 +89,7 @@ const MyLayout: React.FunctionComponent<IProps> = ({
       </Row>
     </Layout.Content>
     <Layout.Footer> Footer is here </Layout.Footer>
-    {globalStyle}
-    {styles}
   </Layout>
-);
-
-const { styles, className } = css.resolve`
-  .nav-fixed {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    background-color: rgba(240, 242, 245, 0.95);
-    height: auto;
-    padding: 12px 36px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .nav-logo {
-    height: 2.5rem;
-  }
-
-  .nav-title {
-    line-height: 2.5rem;
-    display: inline-block;
-    font-size: 15px;
-    margin-left: 10px;
-    transform: translateY(5px);
-  }
-
-`;
-
-const globalStyle = (
-  <style jsx={true} global={true}>{`
-    h1 {
-      font-weight: 400 !important;
-      font-size: 2.5rem;
-      letter-spacing: 0.1rem;
-      margin-top: 12px;
-    }
-    p {
-      font-size: 20px;
-    }
-    @media only screen and (max-width: 768px) {
-      h1 {
-        font-size: 1.5rem;
-        letter-spacing: inherit;
-      }
-      p {
-        font-weight: 300;
-        font-size: 20px;
-      }
-    }
-  `}</style>
 );
 
 export default MyLayout;
