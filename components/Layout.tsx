@@ -4,7 +4,7 @@ import Link from 'next/link';
 import css from 'styled-jsx/css';
 import { Col, Layout, Row } from 'antd';
 
-import '../assets/style.less';
+import '@/assets/style.less';
 import {
   SITE_TITLE,
   SITE_DESC,

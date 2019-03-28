@@ -5,7 +5,7 @@
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     },
     "baseUrl": ".",
     "strict": true,
@@ -22,6 +22,6 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
-    "outDir": "build",
+    "outDir": "build"
   }
 }

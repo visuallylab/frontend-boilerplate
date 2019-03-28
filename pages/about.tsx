@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
-import Section from '../components/Section';
+import Layout from '@/components/Layout';
+import Section from '@/components/Section';
 
 export default () => (
   <Layout>
