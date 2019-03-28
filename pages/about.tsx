@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import Layout from '@/Layouts';
 import Section from '@/components/Section';
 
 export default () => (
