@@ -15,7 +15,9 @@ type State = {
   };
 };
 
-const API = `${process.env.API_ROOT}?ext`;
+// You can replace it by your API_ROOT in .env
+// const API = `${process.env.API_ROOT}?ext`;
+const API = `https://uinames.com/api/?ext`;
 
 class Index extends React.Component {
   public readonly state: State = {
