@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card, Icon } from 'antd';
 
 import Section from '@/components/Section';
-import Layout from '@/layouts';
+import Layout from '@/layouts/Main';
 
 type State = {
   user: {
