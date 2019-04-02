@@ -37,7 +37,7 @@ export default () => (
       <NavTitle>{NAV_TITLE}</NavTitle>
     </span>
     <span>
-      <Link href="/">
+      <Link href={getRelativePath('/')}>
         <a>Home</a>
       </Link>
       {' | '}
