@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import { SITE_TITLE } from '@/constants';
 
 import Meta from './meta';
+import GlobalStyles from './globalStyles';
 
 type TProps = {
   title?: string;
@@ -31,6 +32,7 @@ const MainLayout: React.FunctionComponent<TProps> = ({
       </Row>
     </Layout.Content>
     <Layout.Footer> Footer is here </Layout.Footer>
+    <GlobalStyles />
   </Layout>
 );
 
