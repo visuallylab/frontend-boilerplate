@@ -9,6 +9,9 @@ const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 
 require('dotenv').config();
 
+const GITHUB = process.env.DEPLOY_ENV === 'github';
+const PROJ_NAME = process.env.PROJ_NAME;
+
 // Where your antd-custom.less file lives
 const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8'),
@@ -22,6 +25,13 @@ if (typeof require !== 'undefined') {
 module.exports = withBundleAnalyzer(
   withTypescript(
     withLess({
+      exportPathMap: function() {
+        return {
+          '/': { page: '/' },
+          '/about': { page: '/about' },
+        };
+      },
+      assetPrefix: GITHUB ? `/${PROJ_NAME}/` : '',
       analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
       analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
       bundleAnalyzerConfig: {
