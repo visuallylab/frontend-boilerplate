@@ -41,7 +41,7 @@ export default () => (
         <a>Home</a>
       </Link>
       {' | '}
-      <Link href="/about">
+      <Link href={getRelativePath('/about')}>
         <a>About</a>
       </Link>
     </span>
