@@ -1,3 +1,6 @@
 {
-  "extends": "@visuallylab/tslint-config-frontend"
+  "extends": ["@visuallylab/tslint-config-frontend", "tslint-react-hooks"],
+  "rules": {
+    "react-hooks-nesting": "error"
+  }
 }

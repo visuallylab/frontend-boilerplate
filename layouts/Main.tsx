@@ -8,12 +8,12 @@ import { SITE_TITLE } from '@/constants';
 
 import Meta from './meta';
 
-interface IProps {
+type TProps = {
   title?: string;
   children: React.ReactNode;
-}
+};
 
-const MainLayout: React.FunctionComponent<IProps> = ({
+const MainLayout: React.FunctionComponent<TProps> = ({
   children,
   title = SITE_TITLE,
 }) => (
