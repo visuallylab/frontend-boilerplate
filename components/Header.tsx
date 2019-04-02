@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 import { NAV_TITLE } from '@/constants';
+import { getRelativePath } from '@/utils';
 
 const StyledHeader = styled(Layout.Header)`
   position: fixed;
@@ -32,7 +33,7 @@ const NavTitle = styled.span`
 export default () => (
   <StyledHeader>
     <span>
-      <StyledImage src="/static/logo.svg" alt="logo" />
+      <StyledImage src={getRelativePath('/static/logo.svg')} alt="logo" />
       <NavTitle>{NAV_TITLE}</NavTitle>
     </span>
     <span>
