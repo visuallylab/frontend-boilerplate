@@ -1,7 +1,8 @@
+version: 2
 sudo: false
 language: node_js
 node_js:
-- '8.9.0'
+- '10.15.0'
 cache:
   directories:
   - node_modules
@@ -18,8 +19,7 @@ before_script:
 script:
 - npm run export
 env:
-- DEPLOY_ENV=github
-- NODE_ENV=production
+- DEPLOY_ENV=github NODE_ENV=production
 deploy:
   provider: pages
   skip-cleanup: true
