@@ -15,7 +15,7 @@ notifications:
 before_script:
 - yarn clean
 script:
-- yarn export
+- DEPLOY_ENV=github yarn export
 env:
 - DEPLOY_ENV=github
 deploy:
