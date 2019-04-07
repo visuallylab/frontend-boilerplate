@@ -29,6 +29,11 @@ yarn
 yarn dev
 ```
 
+### CI [see](https://docs.travis-ci.com/)
+
+- Change `.travis.yml` configs with your own.
+- Suppose to change deploy branch to `master`
+
 ## Setup meta tag
 
 1. Modify constants in `constants/index.ts`

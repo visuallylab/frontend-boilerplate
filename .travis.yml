@@ -3,9 +3,7 @@ sudo: false
 language: node_js
 node_js:
 - '10.15.0'
-cache:
-  directories:
-  - node_modules
+cache: yarn
 branches:
   only:
   - styled-components-for-gh-pages
@@ -15,9 +13,9 @@ notifications:
   slack:
     on_success: always
 before_script:
-- npm run clean
+- yarn clean
 script:
-- npm run export
+- yarn export
 env:
 - DEPLOY_ENV=github NODE_ENV=production
 deploy:
