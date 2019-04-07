@@ -1,16 +1,16 @@
 sudo: false
 language: node_js
 node_js:
-  - '8.9.0'
+- '8.9.0'
 cache:
   directories:
-    - node_modules
+  - node_modules
 branches:
   only:
-    - styled-components-for-gh-pages
+  - styled-components-for-gh-pages
 notifications:
   email:
-    - a54383813@gmail.com
+  - a54383813@gmail.com
   slack:
     on_success: always
 before_script:
@@ -19,7 +19,7 @@ script:
   - npm run export
 env:
   global:
-    - DEPLOY_ENV=github
+  - DEPLOY_ENV=github
 deploy:
   provider: pages
   skip-cleanup: true
@@ -27,4 +27,4 @@ deploy:
   keep-history: true
   local-dir: ./out
   on:
-    branch: master
+    branch: styled-components-for-gh-pages
