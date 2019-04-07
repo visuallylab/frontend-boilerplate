@@ -4,7 +4,7 @@ import Section from '@/components/Section';
 export default () => (
   <Layout>
     <Section fullscreen={true}>
-      <h1>About page</h1>
+      <h1>About page with CI</h1>
     </Section>
   </Layout>
 );
