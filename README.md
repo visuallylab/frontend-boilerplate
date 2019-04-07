@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/visuallylab/frontend-boilerplate.svg?branch=master)](https://travis-ci.org/visuallylab/frontend-boilerplate)
+
 # frontend-boilerplate
 
 based on next.js example of with Typescript
