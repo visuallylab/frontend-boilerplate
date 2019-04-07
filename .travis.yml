@@ -7,7 +7,7 @@ cache:
     - node_modules
 branches:
   only:
-    - master
+    - styled-components-for-gh-pages
 notifications:
   email:
     - a54383813@gmail.com
@@ -27,4 +27,4 @@ deploy:
   keep-history: true
   local-dir: ./out
   on:
-    branch: styled-components-for-gh-pages
+    branch: master
