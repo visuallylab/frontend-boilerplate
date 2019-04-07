@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node server.js",
     "export": "yarn clean && next build && next export",
     "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out",
-    "clean": "rm -rf node_modules/.cache"
+    "clean": "rm -rf node_modules/.cache && rm -rf node_modules/gh-pages/.cache"
   },
   "dependencies": {
     "antd": "^3.16.1",

@@ -14,12 +14,12 @@ notifications:
   slack:
     on_success: always
 before_script:
-  - npm run clean
+- npm run clean
 script:
-  - npm run export
+- npm run export
 env:
-  global:
-  - DEPLOY_ENV=github
+- DEPLOY_ENV=github
+- NODE_ENV=production
 deploy:
   provider: pages
   skip-cleanup: true
