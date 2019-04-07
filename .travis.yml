@@ -6,10 +6,13 @@ cache:
   directories:
     - node_modules
 branches:
+  only:
+    - master
+notifications:
+  email:
+    - a54383813@gmail.com
   slack:
     on_success: always
-notifications:
-  email: false
 before_script:
   - npm run clean
 script:
