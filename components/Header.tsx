@@ -37,11 +37,11 @@ export default () => (
       <NavTitle>{NAV_TITLE}</NavTitle>
     </span>
     <span>
-      <Link href={getRelativePath('/')}>
+      <Link href="/" as={getRelativePath('/')}>
         <a>Home</a>
       </Link>
       {' | '}
-      <Link href={getRelativePath('/about')}>
+      <Link href="/about" as={getRelativePath('/about')}>
         <a>About</a>
       </Link>
     </span>
