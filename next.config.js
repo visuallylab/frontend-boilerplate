@@ -1,5 +1,4 @@
 /* eslint-disable */
-const withTypescript = require('@zeit/next-typescript');
 const withLess = require('@zeit/next-less');
 const lessToJS = require('less-vars-to-js');
 const fs = require('fs');
@@ -23,47 +22,45 @@ if (typeof require !== 'undefined') {
 }
 
 module.exports = withBundleAnalyzer(
-  withTypescript(
-    withLess({
-      exportPathMap: function() {
-        return {
-          '/': { page: '/' },
-          '/about': { page: '/about' },
-        };
+  withLess({
+    exportPathMap: function() {
+      return {
+        '/': { page: '/' },
+        '/about': { page: '/about' },
+      };
+    },
+    assetPrefix: GITHUB ? `/${PROJ_NAME}/` : '',
+    analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
+    analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
+    bundleAnalyzerConfig: {
+      server: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/server.html',
       },
-      assetPrefix: GITHUB ? `/${PROJ_NAME}/` : '',
-      analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-      analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
-      bundleAnalyzerConfig: {
-        server: {
-          analyzerMode: 'static',
-          reportFilename: '../bundles/server.html',
-        },
-        browser: {
-          analyzerMode: 'static',
-          reportFilename: '../bundles/client.html',
-        },
+      browser: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/client.html',
       },
-      lessLoaderOptions: {
-        javascriptEnabled: true,
-        modifyVars: themeVariables, // make your antd custom effective
-      },
-      webpack: (config, { isServer, buildId, dev }) => {
-        config.plugins = config.plugins || [];
-        config.resolve.extensions = config.resolve.extensions.concat(['.less']);
+    },
+    lessLoaderOptions: {
+      javascriptEnabled: true,
+      modifyVars: themeVariables, // make your antd custom effective
+    },
+    webpack: (config, { isServer, buildId, dev }) => {
+      config.plugins = config.plugins || [];
+      config.resolve.extensions = config.resolve.extensions.concat(['.less']);
 
-        config.plugins = [
-          ...config.plugins,
+      config.plugins = [
+        ...config.plugins,
 
-          // Read the .env file
-          new Dotenv({
-            path: path.join(__dirname, '.env'),
-            systemvars: true,
-          }),
-        ];
+        // Read the .env file
+        new Dotenv({
+          path: path.join(__dirname, '.env'),
+          systemvars: true,
+        }),
+      ];
 
-        return config;
-      },
-    }),
-  ),
+      return config;
+    },
+  }),
 );
