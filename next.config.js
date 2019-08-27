@@ -16,11 +16,6 @@ const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8'),
 );
 
-// fix: prevents error when .less files are required by node
-if (typeof require !== 'undefined') {
-  require.extensions['.less'] = file => {};
-}
-
 module.exports = withBundleAnalyzer(
   withLess({
     exportPathMap: function() {
@@ -46,10 +41,28 @@ module.exports = withBundleAnalyzer(
       javascriptEnabled: true,
       modifyVars: themeVariables, // make your antd custom effective
     },
-    webpack: (config, { isServer, buildId, dev }) => {
-      config.plugins = config.plugins || [];
-      config.resolve.extensions = config.resolve.extensions.concat(['.less']);
+    webpack: (config, { isServer }) => {
+      if (isServer) {
+        const antStyles = /antd\/.*?\/style.*?/;
+        const origExternals = [...config.externals];
+        config.externals = [
+          (context, request, callback) => {
+            if (request.match(antStyles)) return callback();
+            if (typeof origExternals[0] === 'function') {
+              origExternals[0](context, request, callback);
+            } else {
+              callback();
+            }
+          },
+          ...(typeof origExternals[0] === 'function' ? [] : origExternals),
+        ];
 
+        config.module.rules.unshift({
+          test: antStyles,
+          use: 'null-loader',
+        });
+      }
+      config.plugins = config.plugins || [];
       config.plugins = [
         ...config.plugins,
 
@@ -59,7 +72,6 @@ module.exports = withBundleAnalyzer(
           systemvars: true,
         }),
       ];
-
       return config;
     },
   }),
