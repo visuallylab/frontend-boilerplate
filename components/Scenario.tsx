@@ -14,15 +14,10 @@ const Container = styled(Col)`
 `;
 
 const Title = styled(Col)`
-  color: #fff;
-  font-size: 36px;
+  color: #333;
+  font-size: 24px;
   margin-top: 56px;
   margin-bottom: 30px;
-
-  ${media('md')} {
-    font-size: 22px;
-    text-align: center;
-  }
 `;
 
 const Img = styled.img`

@@ -1,43 +1,41 @@
 import React from 'react';
 
 import Section from '@/components/Section';
-import { getRelativePath } from '@/utils';
 import { SectionId } from '@/constants';
 import Paragraphs from '../Paragraphs';
 
 const Features: React.FC = () => (
   <Section
-    background="rgb(22, 30, 60)"
     title={{
       content: 'Features',
       id: SectionId.Features,
+      color: '#333',
     }}
   >
     <Paragraphs
       data={[
         {
-          icon: '/icon-digital-id.svg',
-          title: 'Digital ID',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Make Money',
           description:
-            'An ID identifier that meets GDPR compliant and W3C protocol. It also could be used as cross platform account.',
+            'Occaecat velit cupidatat sint deserunt est fugiat reprehenderit.',
         },
         {
-          icon: '/icon-data-exchange.svg',
-          title: 'Data Exchangeable',
-          description:
-            'Users can authorize their exchangeable data and digital assets on multiple services.',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Selling Data',
+          description: 'Duis non magna incididunt laborum aliqua.',
         },
         {
-          icon: getRelativePath('/icon-traceability.svg'),
-          title: 'Traceability',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Protect your password',
           description:
-            'Contain the certificate and verification, making KYC reusable to lower the cost of tracing for data authentication.',
+            'Qui irure in dolor pariatur voluptate nisi nisi incididunt adipisicing excepteur.',
         },
         {
-          icon: getRelativePath('/icon-account-integration.svg'),
-          title: 'Account Integration',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Send the email',
           description:
-            'Account as DID with single sign-on (SSO) in and APIs. easily integrate new and existing accounts.',
+            'Ea velit ullamco id laboris aliquip reprehenderit enim irure.',
         },
       ]}
     />

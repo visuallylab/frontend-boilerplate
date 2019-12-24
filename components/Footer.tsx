@@ -1,19 +1,21 @@
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { colors } from '@/styles/global';
-import { getRelativePath, media } from '@/utils';
+import { media } from '@/utils';
 import styled from 'styled-components';
+import {
+  COMPANY_LOGO_PATH,
+  COPYRIGHT_YEAR,
+  COMPANY_NAME,
+  COMPANY_WEBSITE_URL,
+  COMPANY_FACEBOOK_URL,
+  COMPANY_TWITTER_URL,
+  COMPANY_MEDIUM_URL,
+} from '@/constants';
+import { FaLink, FaFacebookF, FaTwitter, FaMediumM } from 'react-icons/fa';
 
 interface IMedia {
   uri: string;
-  img: string;
 }
-
-const MediaIcon = styled.img`
-  width: 32px;
-  ${media('md')} {
-    width: 48px;
-  }
-`;
 
 const StyledA = styled.a`
   margin-right: 16px;
@@ -25,10 +27,8 @@ const StyledA = styled.a`
   }
 `;
 
-const MediaLink: React.FC<IMedia> = ({ uri, img }) => (
-  <StyledA href={uri}>
-    <MediaIcon src={img} />
-  </StyledA>
+const MediaLink: React.FC<IMedia> = ({ uri, children }) => (
+  <StyledA href={uri}>{children}</StyledA>
 );
 
 const MediaLinkWrapper = styled(Row)`
@@ -76,35 +76,30 @@ const Footer: React.FC = () => (
   >
     <Row center="xs" style={{ marginBottom: '12px' }}>
       <Col>
-        <Logo
-          style={{ marginRight: '12px' }}
-          src={getRelativePath('/logo-biilabs.svg')}
-        />
+        <Logo style={{ marginRight: '12px' }} src={COMPANY_LOGO_PATH} />
       </Col>
     </Row>
     <Row center="xs">
       <Col>
         <MediaLinkWrapper>
-          <MediaLink
-            uri="https://biilabs.io/"
-            img={getRelativePath('/link-earth.svg')}
-          />
-          <MediaLink
-            uri="https://www.facebook.com/biilabsrocks"
-            img={getRelativePath('/link-fb.svg')}
-          />
-          <MediaLink
-            uri="https://twitter.com/BiiLabs"
-            img={getRelativePath('/link-twitter.svg')}
-          />
-          <MediaLink
-            uri="https://medium.com/biilabs"
-            img={getRelativePath('/link-medium.svg')}
-          />
+          <MediaLink uri={COMPANY_WEBSITE_URL}>
+            <FaLink color="#fff" />
+          </MediaLink>
+          <MediaLink uri={COMPANY_FACEBOOK_URL}>
+            <FaFacebookF color="#fff" />
+          </MediaLink>
+          <MediaLink uri={COMPANY_TWITTER_URL}>
+            <FaTwitter color="#fff" />
+          </MediaLink>
+          <MediaLink uri={COMPANY_MEDIUM_URL}>
+            <FaMediumM color="#fff" />
+          </MediaLink>
         </MediaLinkWrapper>
       </Col>
     </Row>
-    <CopyRight>2019 © BiiLabs</CopyRight>
+    <CopyRight>
+      {COPYRIGHT_YEAR} © {COMPANY_NAME}
+    </CopyRight>
   </Container>
 );
 

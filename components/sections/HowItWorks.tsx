@@ -1,48 +1,41 @@
 import React from 'react';
 
 import Section from '@/components/Section';
-import { getRelativePath } from '@/utils';
-import { SectionId } from '@/constants';
+import { SectionId, PRODUCT_NAME } from '@/constants';
 import Paragraphs from '../Paragraphs';
 
 const HowItWorks: React.FC = () => (
   <Section
-    background="white"
     title={{
-      content: 'How BiiMe works?',
+      content: `How ${PRODUCT_NAME} works?`,
       id: SectionId.HowItWork,
-      color: 'rgb(58, 173, 212)',
     }}
   >
     <Paragraphs
       data={[
         {
-          color: 'rgb(58, 173, 212)',
-          icon: getRelativePath('/icon-3-getbiime.svg'),
-          title: 'Get BiiMe DID',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Lorem',
           description:
-            'Service owners may use your existing account system and connect BiiMe with OAuth API, or using BiiMe APP developed by BiiLabs directly.',
+            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum numquam laboriosam itaque dolorum eveniet fugit error, nulla quisquam earum debitis! Reprehenderit hic, odit eveniet modi dolorem beatae neque iste vero?',
         },
         {
-          color: 'rgb(58, 173, 212)',
-          icon: getRelativePath('/icon-3-licensing.svg'),
-          title: 'Licensing',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Ipsum',
           description:
-            'Once the users request to join your services, they are able to authorize their information and personal data on DID or offline to meet your licensing proof.',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis consequatur sit odit! Rerum quasi officiis itaque voluptates ullam veniam tempore eos quod corporis reiciendis, rem nam commodi nemo necessitatibus.',
         },
         {
-          color: 'rgb(58, 173, 212)',
-          icon: getRelativePath('/icon-3-verfivation.svg'),
-          title: 'Verification',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Dolor',
           description:
-            'Only need to scan the users QR code to verify if they meet the qualification without more detail information or prove ducuments.',
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere officia autem consectetur rem quidem cupiditate explicabo culpa mollitia quia doloribus, praesentium eius ducimus repellat rerum minus ipsam distinctio velit beatae?',
         },
         {
-          color: 'rgb(58, 173, 212)',
-          icon: getRelativePath('/icon-3-access-service.svg'),
-          title: 'Access Service',
+          icon: 'http://unsplash.it/600/600?random&gravity=center',
+          title: 'Consectetur',
           description:
-            'Easily manage the qualification to access the control of the services, and speed up the user base and integrate multiple services across different department.',
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis blanditiis doloremque, fugit dolor libero minus perspiciatis at incidunt deserunt aut harum rem amet quasi, omnis deleniti vero tenetur unde dolorum!',
         },
       ]}
     />

@@ -7,7 +7,7 @@ interface ISectionProps {
   alignItems?: 'center' | 'flex-start' | 'flex-end';
   fullscreen?: boolean;
   first?: boolean;
-  background: string;
+  background?: string;
 }
 
 interface ITitle {
@@ -23,18 +23,18 @@ interface IProps {
   first?: boolean;
   title?: ITitle;
   desc?: string[];
-  background: string;
+  background?: string;
 }
 
 const StyledSection = styled(Grid)<ISectionProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px 80px 20px;
-  align-items: ${props => props.alignItems};
-  text-align: ${props => props.textAlign};
-  height: ${props => (props.fullscreen ? '90vh' : 'initial')};
-  background: ${props => props.background};
+  padding: 20px 20px 120px 20px;
+  align-items: ${(props: ISectionProps) => props.alignItems};
+  text-align: ${(props: ISectionProps) => props.textAlign};
+  height: ${(props: ISectionProps) => (props.fullscreen ? '90vh' : 'initial')};
+  background: ${(props: ISectionProps) => props.background || 'transparent'};
 `;
 
 const Section: React.FunctionComponent<IProps> = ({

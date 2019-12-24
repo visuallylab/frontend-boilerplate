@@ -1,6 +1,7 @@
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { SectionId, COMPANY_WEBSITE_URL, COMPANY_NAME } from '@/constants';
 
 export const MenuIcon = styled.img`
   position: absolute;
@@ -58,20 +59,20 @@ const Menu: React.FC = () => {
         </Col>
         {isActive && (
           <>
-            <MenuItem href="#features" onClick={close}>
+            <MenuItem href={`#${SectionId.Features}`} onClick={close}>
               Features
             </MenuItem>
-            <MenuItem href="#scenarios" onClick={close}>
+            <MenuItem href={`#${SectionId.Scenarios}`} onClick={close}>
               Scenarios
             </MenuItem>
-            <MenuItem href="#how-it-work" onClick={close}>
+            <MenuItem href={`#${SectionId.HowItWork}`} onClick={close}>
               How it works
             </MenuItem>
-            <MenuItem href="#download" onClick={close}>
+            <MenuItem href={`#${SectionId.Download}`} onClick={close}>
               Download
             </MenuItem>
-            <MenuItem href="https://biilabs.io/" onClick={close}>
-              BiiLabs
+            <MenuItem href={COMPANY_WEBSITE_URL} onClick={close}>
+              {COMPANY_NAME}
             </MenuItem>
           </>
         )}

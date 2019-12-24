@@ -25,8 +25,9 @@ export const Description = styled.p<{ color: string }>`
 `;
 
 export const Title = styled.h2<{ color: string }>`
+  font-weight: 400;
   color: ${props => props.color};
-  font-size: 28px;
+  font-size: 24px;
   margin: 0 0 10px;
 `;
 
@@ -55,7 +56,7 @@ const Paragraph: React.FC<IParagraph> = ({
   description,
   icon,
   iconStyle,
-  color = 'white',
+  color = '#333',
 }) => (
   <Container md={3} sm={6} xs={12}>
     {icon && <Icon src={icon} style={iconStyle} />}

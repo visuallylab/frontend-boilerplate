@@ -3,12 +3,10 @@ import { Row } from 'react-styled-flexboxgrid';
 
 import Section from '@/components/Section';
 import Scenario from '@/components/Scenario';
-import { getRelativePath } from '@/utils';
 import { SectionId } from '@/constants';
 
 const Scenarios: React.FC = () => (
   <Section
-    background="linear-gradient(rgb(0, 226, 158), rgb(0, 156, 255))"
     title={{
       content: 'Application Scenarios',
       id: SectionId.Scenarios,
@@ -16,20 +14,20 @@ const Scenarios: React.FC = () => (
   >
     <Row style={{ width: '100%' }} between="xs">
       <Scenario
-        title="Certificates"
-        icon={getRelativePath('/icon-certification.svg')}
+        title="Shopping mal"
+        icon="http://unsplash.it/600/600?random&gravity=center"
       />
       <Scenario
         title="Smart City"
-        icon={getRelativePath('/icon-smart-city.svg')}
+        icon="http://unsplash.it/600/600?random&gravity=center"
       />
       <Scenario
-        title="Medical Record"
-        icon={getRelativePath('/icon-medical-record.svg')}
+        title="Collage"
+        icon="http://unsplash.it/600/600?random&gravity=center"
       />
       <Scenario
-        title="OAuth Login"
-        icon={getRelativePath('/icon-oauth-login.svg')}
+        title="Toilet"
+        icon="http://unsplash.it/600/600?random&gravity=center"
       />
     </Row>
   </Section>

@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
-import { getRelativePath } from '@/utils';
 import Menu from '@/components/Menu';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import { SectionId } from '@/constants';
+import {
+  SectionId,
+  COMPANY_WEBSITE_URL,
+  PRODUCT_NAME,
+  COMPANY_NAME,
+  PRODUCT_LOGO_PATH,
+} from '@/constants';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
@@ -50,15 +55,15 @@ export default () => (
     <StyledNav fluid>
       <Row between="xs" style={{ width: '100%' }}>
         <CenteredCol>
-          <StyledImage src={getRelativePath('/icon-4.svg')} alt="logo" />
-          <NavTitle>BiiMe</NavTitle>
+          <StyledImage src={PRODUCT_LOGO_PATH} alt="logo" />
+          <NavTitle>{PRODUCT_NAME}</NavTitle>
         </CenteredCol>
         <AlignEndCol xs={false} sm={false} md>
           <A href={`#${SectionId.Features}`}>Features</A>
           <A href={`#${SectionId.Scenarios}`}>Scenarios</A>
           <A href={`#${SectionId.HowItWork}`}>How it works</A>
           <A href={`#${SectionId.Download}`}>Download</A>
-          <A href="https://biilabs.io/">BiiLabs</A>
+          <A href={COMPANY_WEBSITE_URL}>{COMPANY_NAME}</A>
         </AlignEndCol>
       </Row>
     </StyledNav>

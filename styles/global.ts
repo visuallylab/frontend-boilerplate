@@ -5,6 +5,8 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     width: 100%;
+    /* Github system font stack https://css-tricks.com/snippets/css/system-font-stack/ */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   h1 {
     font-size: 2.5em;
@@ -30,7 +32,7 @@ export default createGlobalStyle`
 `;
 
 export const colors = {
-  primary: 'rgb(28, 42, 77)',
+  primary: '#333',
 };
 
 export const HEADER_HEIGHT = '48px';
