@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Section from '@/components/Section';
 import { PRODUCT } from '@/constants';
+import { getRelativePath } from '@/utils';
 
 const Content = styled(Row)`
   padding-top: 140px;
@@ -22,10 +23,10 @@ const Intro: React.FC = () => (
         <p style={{ textAlign: 'center' }}>{PRODUCT.SLOGAN}</p>
         <ButtonsWrapper center="xs">
           <a href={PRODUCT.APP_STORE_DOWNLOAD_LINK} style={{ marginRight: 15 }}>
-            <img src={'/button-app-store.svg'} />
+            <img src={getRelativePath('/button-app-store.svg')} />
           </a>
           <a href={PRODUCT.GOOGLE_PLAY_STORE_DOWNLOAD_LINK}>
-            <img src={'/button-google-play.svg'} />
+            <img src={getRelativePath('/button-google-play.svg')} />
           </a>
         </ButtonsWrapper>
       </Col>

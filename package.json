@@ -4,14 +4,16 @@
     "server": "json-graphql-server fake-db.js --p 5000",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && next export && cp CNAME ./out/ && gh-pages -d out",
+    "deploy": "next build && next export && gh-pages -d out",
     "export": "next build && next export",
     "tsc": "tsc"
   },
   "dependencies": {
     "@types/styled-components": "^4.4.1",
     "babel-plugin-module-resolver": "^4.0.0",
+    "dotenv-load": "^2.0.0",
     "next": "^9.1.6",
+    "next-env": "^1.1.0",
     "react": "^16.12.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.12.0",
