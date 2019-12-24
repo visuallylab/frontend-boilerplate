@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Head from '@/components/Head';
-import Header from '@/components/Header';
-// import Footer from '@/components/Footer';
+import Nav from '@/components/Nav';
 
 import GlobalStyles, { HEADER_HEIGHT } from '@/styles/global';
 import styled from 'styled-components';
@@ -20,9 +19,8 @@ const Layout: React.FC = ({ children }) => (
     <Head />
 
     {/* Body */}
-    <Header />
+    <Nav />
     <Content>{children}</Content>
-    {/* <Footer /> */}
     <GlobalStyles />
   </Container>
 );

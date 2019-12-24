@@ -4,6 +4,7 @@
 // import HowItWorks from '@/components/sections/HowItWorks';
 // import Download from '@/components/sections/Download';
 import Layout from '@/components/Layout';
+import Footer from '@/components/Footer';
 
 const Index: React.FC = () => (
   <Layout>
@@ -14,6 +15,7 @@ const Index: React.FC = () => (
     <Scenarios />
     <HowItWorks />
     <Download /> */}
+    <Footer />
   </Layout>
 );
 
