@@ -43,7 +43,7 @@ const Container = styled(Col)`
   text-align: center;
   padding: 0 18px;
   ${media.lessThan('md')` 
-    margin-top: 60px;
+    margin-bottom: 40px;
     display:flex;
     flex-direction: row;
     justify-content: flex-start;

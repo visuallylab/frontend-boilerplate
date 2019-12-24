@@ -2,15 +2,7 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { colors } from '@/styles/global';
 import { media } from '@/utils';
 import styled from 'styled-components';
-import {
-  COMPANY_LOGO_PATH,
-  COPYRIGHT_YEAR,
-  COMPANY_NAME,
-  COMPANY_WEBSITE_URL,
-  COMPANY_FACEBOOK_URL,
-  COMPANY_TWITTER_URL,
-  COMPANY_MEDIUM_URL,
-} from '@/constants';
+import { COMPANY } from '@/constants';
 import { FaLink, FaFacebookF, FaTwitter, FaMediumM } from 'react-icons/fa';
 
 interface IMedia {
@@ -69,29 +61,29 @@ const Footer: React.FC = () => (
   >
     <Row center="xs" style={{ marginBottom: '12px' }}>
       <Col>
-        <Logo style={{ marginRight: '12px' }} src={COMPANY_LOGO_PATH} />
+        <Logo style={{ marginRight: '12px' }} src={COMPANY.LOGO_PATH} />
       </Col>
     </Row>
     <Row center="xs">
       <Col>
         <MediaLinkWrapper>
-          <MediaLink uri={COMPANY_WEBSITE_URL}>
+          <MediaLink uri={COMPANY.WEBSITE_URL}>
             <FaLink color="#fff" />
           </MediaLink>
-          <MediaLink uri={COMPANY_FACEBOOK_URL}>
+          <MediaLink uri={COMPANY.FACEBOOK_URL}>
             <FaFacebookF color="#fff" />
           </MediaLink>
-          <MediaLink uri={COMPANY_TWITTER_URL}>
+          <MediaLink uri={COMPANY.TWITTER_URL}>
             <FaTwitter color="#fff" />
           </MediaLink>
-          <MediaLink uri={COMPANY_MEDIUM_URL}>
+          <MediaLink uri={COMPANY.MEDIUM_URL}>
             <FaMediumM color="#fff" />
           </MediaLink>
         </MediaLinkWrapper>
       </Col>
     </Row>
     <CopyRight>
-      {COPYRIGHT_YEAR} © {COMPANY_NAME}
+      {COMPANY.COPYRIGHT_YEAR} © {COMPANY.NAME}
     </CopyRight>
   </Container>
 );

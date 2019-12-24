@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { SectionId, COMPANY_WEBSITE_URL, COMPANY_NAME } from '@/constants';
+import { SectionId, COMPANY } from '@/constants';
 import { FaBars, FaTimesCircle } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { media } from '@/utils';
@@ -96,8 +96,8 @@ const Menu: React.FC = () => {
               <ScrollMenuItem href={`#${SectionId.Download}`} onClick={close}>
                 Download
               </ScrollMenuItem>
-              <MenuItem href={COMPANY_WEBSITE_URL} onClick={close}>
-                {COMPANY_NAME}
+              <MenuItem href={COMPANY.WEBSITE_URL} onClick={close}>
+                {COMPANY.NAME}
               </MenuItem>
             </>
           )}

@@ -2,13 +2,7 @@ import styled from 'styled-components';
 
 import Menu from '@/components/Menu';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import {
-  SectionId,
-  COMPANY_WEBSITE_URL,
-  PRODUCT_NAME,
-  COMPANY_NAME,
-  PRODUCT_LOGO_PATH,
-} from '@/constants';
+import { SectionId, COMPANY, PRODUCT } from '@/constants';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const StyledNav = styled(Grid)`
@@ -63,15 +57,15 @@ export default () => (
     <StyledNav fluid>
       <Row between="xs" style={{ width: '100%' }}>
         <CenteredCol>
-          <StyledImage src={PRODUCT_LOGO_PATH} alt="logo" />
-          <NavTitle>{PRODUCT_NAME}</NavTitle>
+          <StyledImage src={PRODUCT.LOGO_PATH} alt="logo" />
+          <NavTitle>{PRODUCT.NAME}</NavTitle>
         </CenteredCol>
         <AlignEndCol xs={false} sm={false} md>
           <ScrollLink href={`#${SectionId.Features}`}>Features</ScrollLink>
           <ScrollLink href={`#${SectionId.Scenarios}`}>Scenarios</ScrollLink>
           <ScrollLink href={`#${SectionId.HowItWork}`}>How it works</ScrollLink>
           <ScrollLink href={`#${SectionId.Download}`}>Download</ScrollLink>
-          <A href={COMPANY_WEBSITE_URL}>{COMPANY_NAME}</A>
+          <A href={COMPANY.WEBSITE_URL}>{COMPANY.NAME}</A>
         </AlignEndCol>
       </Row>
     </StyledNav>
