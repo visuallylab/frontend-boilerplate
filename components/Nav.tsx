@@ -9,6 +9,7 @@ import {
   COMPANY_NAME,
   PRODUCT_LOGO_PATH,
 } from '@/constants';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
@@ -30,6 +31,13 @@ const NavTitle = styled.span`
   font-size: 24px;
   margin-left: 10px;
   color: rgb(28, 42, 77);
+`;
+
+const ScrollLink = styled(AnchorLink)`
+  margin-left: 34px;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
 `;
 
 const A = styled.a`
@@ -59,10 +67,10 @@ export default () => (
           <NavTitle>{PRODUCT_NAME}</NavTitle>
         </CenteredCol>
         <AlignEndCol xs={false} sm={false} md>
-          <A href={`#${SectionId.Features}`}>Features</A>
-          <A href={`#${SectionId.Scenarios}`}>Scenarios</A>
-          <A href={`#${SectionId.HowItWork}`}>How it works</A>
-          <A href={`#${SectionId.Download}`}>Download</A>
+          <ScrollLink href={`#${SectionId.Features}`}>Features</ScrollLink>
+          <ScrollLink href={`#${SectionId.Scenarios}`}>Scenarios</ScrollLink>
+          <ScrollLink href={`#${SectionId.HowItWork}`}>How it works</ScrollLink>
+          <ScrollLink href={`#${SectionId.Download}`}>Download</ScrollLink>
           <A href={COMPANY_WEBSITE_URL}>{COMPANY_NAME}</A>
         </AlignEndCol>
       </Row>

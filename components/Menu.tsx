@@ -1,7 +1,9 @@
-import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { SectionId, COMPANY_WEBSITE_URL, COMPANY_NAME } from '@/constants';
+import { FaBars, FaTimesCircle } from 'react-icons/fa';
+import { generateMedia } from 'styled-media-query';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export const MenuIcon = styled.img`
   position: absolute;
@@ -11,73 +13,101 @@ export const MenuIcon = styled.img`
   height: 44px;
 `;
 
+const media = generateMedia({
+  md: '1024px',
+});
+
 export const MenuIconWrapper = styled.a`
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 24px;
+  right: 32px;
   z-index: 9;
+  display: none;
+  cursor: pointer;
+
+  ${media.lessThan('md')`
+    display: block;
+  `}
 `;
 
-export const MenuWrapper = styled(Row)<{ active: boolean }>`
+export const MenuWrapper = styled.div<{ active: boolean }>`
+  background-color: #fff;
+  box-shadow: 0px 1px 2px 0px #eee;
+  display: ${props => (props.active ? 'block' : 'none')};
+  padding: 32px;
+`;
+
+export const ScrollMenuItem = styled(AnchorLink)`
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 60px;
+  color: #333;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const MenuItem = styled.a`
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 60px;
+  color: #333;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const Container = styled.div`
   position: fixed;
   right: 0;
   left: 0;
   top: 0;
   z-index: 8;
-  bottom: ${props => (props.active ? 0 : 'initial')};
-  background-color: ${props => (props.active ? '#161e3c' : 'transparent')};
-`;
-
-export const MenuItem = styled.a`
-  display: block;
-  font-size: 32px;
-  color: #ffffff;
-  padding-top: 32px;
-  padding-bottom: 12px;
-  margin-left: 32px;
-  margin-right: 13px;
-  border-bottom: 1px solid #fff;
 `;
 
 const Menu: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
   const close = () => setIsActive(false);
   return (
-    <Grid>
-      <MenuWrapper active={isActive}>
-        <Col sm={24} md={false}>
-          <MenuIconWrapper
-            onClick={e => {
-              e.preventDefault();
-              setIsActive(prev => !prev);
-            }}
-          >
-            <MenuIcon
-              src={isActive ? '/button-option-close.svg' : '/button-option.svg'}
-            />
-          </MenuIconWrapper>
-        </Col>
-        {isActive && (
-          <>
-            <MenuItem href={`#${SectionId.Features}`} onClick={close}>
-              Features
-            </MenuItem>
-            <MenuItem href={`#${SectionId.Scenarios}`} onClick={close}>
-              Scenarios
-            </MenuItem>
-            <MenuItem href={`#${SectionId.HowItWork}`} onClick={close}>
-              How it works
-            </MenuItem>
-            <MenuItem href={`#${SectionId.Download}`} onClick={close}>
-              Download
-            </MenuItem>
-            <MenuItem href={COMPANY_WEBSITE_URL} onClick={close}>
-              {COMPANY_NAME}
-            </MenuItem>
-          </>
-        )}
-      </MenuWrapper>
-    </Grid>
+    <>
+      <MenuIconWrapper
+        onClick={e => {
+          e.preventDefault();
+          setIsActive(prev => !prev);
+        }}
+      >
+        {isActive ? <FaTimesCircle color="#333" /> : <FaBars color="#333" />}
+      </MenuIconWrapper>
+      <Container>
+        <MenuWrapper active={isActive}>
+          {isActive && (
+            <>
+              <ScrollMenuItem href={`#${SectionId.Features}`} onClick={close}>
+                Features
+              </ScrollMenuItem>
+              <ScrollMenuItem href={`#${SectionId.Scenarios}`} onClick={close}>
+                Scenarios
+              </ScrollMenuItem>
+              <ScrollMenuItem href={`#${SectionId.HowItWork}`} onClick={close}>
+                How it works
+              </ScrollMenuItem>
+              <ScrollMenuItem href={`#${SectionId.Download}`} onClick={close}>
+                Download
+              </ScrollMenuItem>
+              <MenuItem href={COMPANY_WEBSITE_URL} onClick={close}>
+                {COMPANY_NAME}
+              </MenuItem>
+            </>
+          )}
+        </MenuWrapper>
+      </Container>
+    </>
   );
 };
 
