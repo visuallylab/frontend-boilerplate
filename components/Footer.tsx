@@ -15,10 +15,20 @@ const MediaIcon = styled.img`
   }
 `;
 
+const StyledA = styled.a`
+  margin-right: 16px;
+  opacity: 0.6;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
 const MediaLink: React.FC<IMedia> = ({ uri, img }) => (
-  <a style={{ marginRight: 16 }} href={uri}>
+  <StyledA href={uri}>
     <MediaIcon src={img} />
-  </a>
+  </StyledA>
 );
 
 const MediaLinkWrapper = styled(Row)`
@@ -46,9 +56,11 @@ const Container = styled(Grid)`
 
 const CopyRight = styled.p`
   text-align: center;
-  margin-top: 100px;
+  opacity: 0.5;
+  margin-top: 40px;
   color: #fff;
-  font-family: 'HelveticaNeue-Light';
+  font-size: 18px;
+  font-weight: lighter;
   ${media('md')} {
     margin-top: 32px;
     font-size: 16px;
@@ -62,11 +74,16 @@ const Footer: React.FC = () => (
       backgroundColor: colors.primary,
     }}
   >
-    <Row between="xs">
-      <Col xs={24} sm={24} md={2} style={{ textAlign: 'center' }}>
-        <Logo src={getRelativePath('/logo-biilabs.svg')} />
+    <Row center="xs" style={{ marginBottom: '12px' }}>
+      <Col>
+        <Logo
+          style={{ marginRight: '12px' }}
+          src={getRelativePath('/logo-biilabs.svg')}
+        />
       </Col>
-      <Col xs={24} sm={24} md={22}>
+    </Row>
+    <Row center="xs">
+      <Col>
         <MediaLinkWrapper>
           <MediaLink
             uri="https://biilabs.io/"

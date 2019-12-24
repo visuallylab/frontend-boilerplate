@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import { getRelativePath } from '@/utils';
 import Menu from '@/components/Menu';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+import { SectionId } from '@/constants';
 
 const StyledNav = styled(Grid)`
   z-index: 2;
-  background-color: transparent;
+  background-color: #fff;
+  box-shadow: 0px 1px 2px 0px #eee;
   position: absolute;
   left: 0;
   right: 0;
-  padding: 16px;
+  padding-top: 20px;
+  padding-bottom: 12px;
 `;
 
 const StyledImage = styled.img`
@@ -28,6 +31,7 @@ const A = styled.a`
   margin-left: 34px;
   color: #000;
   font-size: 20px;
+  text-decoration: none;
 `;
 
 const CenteredCol = styled(Col)`
@@ -50,10 +54,10 @@ export default () => (
           <NavTitle>BiiMe</NavTitle>
         </CenteredCol>
         <AlignEndCol xs={false} sm={false} md>
-          <A href="#features">Features</A>
-          <A href="#scenarios">Scenarios</A>
-          <A href="#how-it-work">How it works</A>
-          <A href="#download">Download</A>
+          <A href={`#${SectionId.Features}`}>Features</A>
+          <A href={`#${SectionId.Scenarios}`}>Scenarios</A>
+          <A href={`#${SectionId.HowItWork}`}>How it works</A>
+          <A href={`#${SectionId.Download}`}>Download</A>
           <A href="https://biilabs.io/">BiiLabs</A>
         </AlignEndCol>
       </Row>
