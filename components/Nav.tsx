@@ -4,7 +4,7 @@ import { getRelativePath } from '@/utils';
 import Menu from '@/components/Menu';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
-const StyledHeader = styled(Grid)`
+const StyledNav = styled(Grid)`
   z-index: 2;
   background-color: transparent;
   position: absolute;
@@ -43,7 +43,7 @@ const AlignEndCol = styled(Col)`
 export default () => (
   <>
     <Menu />
-    <StyledHeader fluid>
+    <StyledNav fluid>
       <Row between="xs" style={{ width: '100%' }}>
         <CenteredCol>
           <StyledImage src={getRelativePath('/icon-4.svg')} alt="logo" />
@@ -57,6 +57,6 @@ export default () => (
           <A href="https://biilabs.io/">BiiLabs</A>
         </AlignEndCol>
       </Row>
-    </StyledHeader>
+    </StyledNav>
   </>
 );
