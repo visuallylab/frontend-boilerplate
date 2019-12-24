@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-styled-flexboxgrid';
 import Title from '@/components/SectionTitle';
+import { media } from '@/utils';
 interface ISectionProps {
   textAlign?: 'center' | 'left' | 'right';
   alignItems?: 'center' | 'flex-start' | 'flex-end';
@@ -35,6 +36,10 @@ const StyledSection = styled(Grid)<ISectionProps>`
   text-align: ${(props: ISectionProps) => props.textAlign};
   height: ${(props: ISectionProps) => (props.fullscreen ? '90vh' : 'initial')};
   background: ${(props: ISectionProps) => props.background || 'transparent'};
+
+  ${media.lessThan('md')`
+   padding: 12px 12px 32px 12px;
+  `}
 `;
 
 const Section: React.FunctionComponent<IProps> = ({

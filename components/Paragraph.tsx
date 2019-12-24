@@ -19,9 +19,10 @@ export const Description = styled.p<{ color: string }>`
   margin: 0;
   text-align: left;
 
-  ${media('md')} {
-    max-width: initial;
-  }
+  ${media.lessThan('md')`
+  max-width: initial;
+  font-size: 16px;
+  `}
 `;
 
 export const Title = styled.h2<{ color: string }>`
@@ -29,6 +30,9 @@ export const Title = styled.h2<{ color: string }>`
   color: ${props => props.color};
   font-size: 24px;
   margin: 0 0 10px;
+  ${media.lessThan('md')` 
+   font-size: 20px;
+  `}
 `;
 
 const Container = styled(Col)`
@@ -38,9 +42,24 @@ const Container = styled(Col)`
   align-items: center;
   text-align: center;
   padding: 0 18px;
-  ${media('md')} {
+  ${media.lessThan('md')` 
     margin-top: 60px;
-  }
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+   
+  `}
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${media.lessThan('md')`
+    text-align: left;
+    padding-left: 32px;
+    align-items: flex-start;
+  `}
 `;
 
 export interface IParagraph {
@@ -60,8 +79,10 @@ const Paragraph: React.FC<IParagraph> = ({
 }) => (
   <Container md={3} sm={6} xs={12}>
     {icon && <Icon src={icon} style={iconStyle} />}
-    <Title color={color}>{title}</Title>
-    <Description color={color}>{description}</Description>
+    <ContentWrapper>
+      <Title color={color}>{title}</Title>
+      <Description color={color}>{description}</Description>
+    </ContentWrapper>
   </Container>
 );
 

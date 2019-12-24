@@ -7,15 +7,13 @@ import { Col } from 'react-styled-flexboxgrid';
 export const Description = styled(ItemDescription)`
   text-align: left;
   margin-left: 50px;
-  ${media('md')} {
+  ${media.lessThan('md')`
     max-width: 100%;
     margin-bottom: 100px;
-  }
+    `}
 `;
 export const InfoTitle = styled(Title)`
-  ${media('md')} {
-    margin-bottom: 8px;
-  }
+  ${media.lessThan('md')`  margin-bottom: 8px;`}
 `;
 
 export const InfoWrapper = styled(Col)`

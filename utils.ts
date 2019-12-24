@@ -1,3 +1,5 @@
+import { generateMedia } from 'styled-media-query';
+
 // import { GITHUB, PROJ_NAME } from './environment';
 
 export function getRelativePath(path: string): string {
@@ -9,19 +11,10 @@ export function getRelativePath(path: string): string {
 }
 
 export const breakpoints = {
-  sm: '576',
-  md: '768',
-  lg: '992',
+  xs: '0',
+  sm: '48em',
+  md: '64em',
+  lg: '75em',
 };
 
-/**
- * @param {string} threshold
- * @param {string} displayWay 'max' or 'min'
- */
-export const media = (
-  threshold: 'sm' | 'md' | 'lg',
-  displayWay: 'max' | 'min' = 'max',
-) => {
-  const breakpoint = breakpoints[threshold];
-  return `@media (${displayWay}-width: ${breakpoint}px)`;
-};
+export const media = generateMedia(breakpoints);

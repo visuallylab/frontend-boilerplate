@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { SectionId, COMPANY_WEBSITE_URL, COMPANY_NAME } from '@/constants';
 import { FaBars, FaTimesCircle } from 'react-icons/fa';
-import { generateMedia } from 'styled-media-query';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { media } from '@/utils';
 
 export const MenuIcon = styled.img`
   position: absolute;
@@ -13,12 +13,8 @@ export const MenuIcon = styled.img`
   height: 44px;
 `;
 
-const media = generateMedia({
-  md: '1024px',
-});
-
 export const MenuIconWrapper = styled.a`
-  position: absolute;
+  position: fixed;
   top: 24px;
   right: 32px;
   z-index: 9;

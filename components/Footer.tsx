@@ -34,24 +34,18 @@ const MediaLink: React.FC<IMedia> = ({ uri, children }) => (
 const MediaLinkWrapper = styled(Row)`
   display: flex;
   justify-content: flex-end;
-  ${media('md')} {
-    justify-content: center;
-  }
+  ${media.lessThan('md')`justify-content: center;`}
 `;
 
 const Logo = styled.img`
   width: 150px;
-  ${media('md')} {
+  ${media.lessThan('md')`
     width: 80px;
-    margin-bottom: 20px;
-  }
+    margin-bottom: 20px;`}
 `;
 
 const Container = styled(Grid)`
   padding: 32px 20px 14px;
-  ${media('md')} {
-    padding: 16px 0 0 0;
-  }
 `;
 
 const CopyRight = styled.p`
@@ -61,10 +55,9 @@ const CopyRight = styled.p`
   color: #fff;
   font-size: 18px;
   font-weight: lighter;
-  ${media('md')} {
-    margin-top: 32px;
-    font-size: 16px;
-  }
+  ${media.lessThan('md')` 
+  margin-top: 32px;
+  font-size: 16px;`}
 `;
 
 const Footer: React.FC = () => (
