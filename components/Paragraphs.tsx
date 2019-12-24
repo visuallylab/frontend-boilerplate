@@ -1,6 +1,5 @@
 import { Row } from 'react-styled-flexboxgrid';
 import Paragraph, { IParagraph } from './Paragraph';
-import { getRelativePath } from '@/utils';
 import styled from 'styled-components';
 
 const StyledRow = styled(Row)`
@@ -14,7 +13,7 @@ const Paragraphs: React.FC<{ data: IParagraph[] }> = ({ data }) => (
       <Paragraph
         color={p.color}
         key={p.title}
-        icon={p.icon ? getRelativePath(p.icon) : undefined}
+        icon={p.icon || undefined}
         title={p.title}
         description={p.description}
       />

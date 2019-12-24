@@ -1,11 +1,9 @@
-import { getRelativePath } from '@/utils';
-
 /* head meta tag data */
 export const SITE_TITLE = 'BiiMe | BiiLabs';
 export const SITE_DESC = 'Universal open DLT ID solution';
 export const SITE_URL = 'biime.biilabs.io';
-export const FAVICON_PATH = getRelativePath('//favicon.ico');
-export const LARGE_ICON_PATH = getRelativePath('//large-icon.png');
+export const FAVICON_PATH = '/favicon.ico';
+export const LARGE_ICON_PATH = '/large-icon.png';
 export const PRODUCT_LOGO_PATH =
   'http://unsplash.it/100/100?random&gravity=center';
 export const COMPANY_LOGO_PATH =

@@ -3,7 +3,6 @@ import { Row, Col } from 'react-styled-flexboxgrid';
 import styled from 'styled-components';
 
 import Section from '@/components/Section';
-import { getRelativePath } from '@/utils';
 import {
   APP_STORE_DOWNLOAD_LINK,
   GOOGLE_PLAY_STORE_DOWNLOAD_LINK,
@@ -26,10 +25,10 @@ const Intro: React.FC = () => (
         <p style={{ textAlign: 'center' }}>our ultimate solution</p>
         <ButtonsWrapper center="xs">
           <a href={APP_STORE_DOWNLOAD_LINK} style={{ marginRight: 15 }}>
-            <img src={getRelativePath('/button-app-store.svg')} />
+            <img src={'/button-app-store.svg'} />
           </a>
           <a href={GOOGLE_PLAY_STORE_DOWNLOAD_LINK}>
-            <img src={getRelativePath('/button-google-play.svg')} />
+            <img src={'/button-google-play.svg'} />
           </a>
         </ButtonsWrapper>
       </Col>
