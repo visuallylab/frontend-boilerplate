@@ -18,7 +18,13 @@ based on next.js example of with Typescript
 yarn
 ```
 
-2. run development server
+2. Create `.env` and update the value of your own
+
+```bash
+cp .env.example .env
+```
+
+3. run development server
 
 ```bash
 yarn dev
