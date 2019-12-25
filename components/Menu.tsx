@@ -4,6 +4,7 @@ import { SectionId, COMPANY } from '@/constants';
 import { FaBars, FaTimesCircle } from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { media } from '@/utils';
+import { colors } from '@/styles';
 
 export const MenuIcon = styled.img`
   position: absolute;
@@ -78,7 +79,11 @@ const Menu: React.FC = () => {
           setIsActive(prev => !prev);
         }}
       >
-        {isActive ? <FaTimesCircle color="#333" /> : <FaBars color="#333" />}
+        {isActive ? (
+          <FaTimesCircle color={colors.primary} />
+        ) : (
+          <FaBars color={colors.primary} />
+        )}
       </MenuIconWrapper>
       <Container>
         <MenuWrapper active={isActive}>
