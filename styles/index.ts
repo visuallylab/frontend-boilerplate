@@ -37,7 +37,7 @@ export default createGlobalStyle`
 `;
 
 export const colors = {
-  primary: 'blue',
+  primary: '#333',
 };
 
 export const HEADER_HEIGHT = '48px';
