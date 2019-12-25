@@ -20,7 +20,8 @@
     "react-icons": "^3.2.2",
     "react-styled-flexboxgrid": "^3.1.0",
     "styled-components": "^4.4.1",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "styled-normalize": "^8.0.6"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",

@@ -3,7 +3,7 @@ import React from 'react';
 import Head from '@/components/Head';
 import Nav from '@/components/Nav';
 
-import GlobalStyles, { HEADER_HEIGHT } from '@/styles/global';
+import GlobalStyles, { HEADER_HEIGHT } from '@/styles';
 import styled from 'styled-components';
 
 const Container = styled.div`

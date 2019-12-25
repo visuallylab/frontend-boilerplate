@@ -1,5 +1,5 @@
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import { colors } from '@/styles/global';
+import { colors } from '@/styles';
 import { media } from '@/utils';
 import styled from 'styled-components';
 import { COMPANY } from '@/constants';
