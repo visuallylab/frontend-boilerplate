@@ -4,7 +4,7 @@
     "server": "json-graphql-server fake-db.js --p 5000",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && next export && gh-pages -d out",
+    "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out",
     "export": "next build && next export",
     "tsc": "tsc"
   },
